@@ -1,3 +1,9 @@
+function dropLowest (x) {
+    x.sort()
+    x.shift()
+    console.log(x)
+}
+
 function fourDSix () {
     let array = []
     for (i = 0; i < 4; i++) {
