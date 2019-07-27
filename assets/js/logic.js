@@ -1,30 +1,20 @@
-// Die Functions
-function dFour () {
-    let roll = Math.floor((Math.random() * 4) + 1)
-    return roll
+//dice functions
+function dice (x, y) {
+    let array = []
+    for (i = 0; i < x; i++) {
+        array.push(Math.floor((Math.random() * y) + 1))
+    }
+    console.log(array)
+    return array
 }
 
-function dSix () {
-    let roll = Math.floor((Math.random() * 6) + 1)
-    return roll
+function dropLowest (x) {
+    x.sort()
+    x.shift()
+    console.log(x)
+    return x
 }
 
-function dEight () {
-    let roll = Math.floor((Math.random() * 8) + 1)
-    return roll
-}
-
-function dTen () {
-    let roll = Math.floor((Math.random() * 10) + 1)
-    return roll
-}
-
-function dTwelve () {
-    let roll = Math.floor((Math.random() * 12) + 1)
-    return roll
-}
-
-//Score generation functions
 function add (x) {
     let array = x
     let sum = 0
@@ -35,36 +25,11 @@ function add (x) {
     return sum
 }
 
-function dropLowest (x) {
-    x.sort()
-    x.shift()
-    console.log(x)
-    return x
-}
-
-function fourDSix () {
-    let array = []
-    for (i = 0; i < 4; i++) {
-    array.push(dSix())
-    }
-    console.log(array)
-    return array
-}
-
-function threeDSix () {
-    let array = []
-    for (i = 0; i < 3; i++) {
-        array.push(dSix())
-    }
-    console.log(array)
-    return array
-}
-
-//Score Generation methods
+//ability score generation functions
 function standard () {
     let abilities = []
     for (j = 0; j < 6; j++) {
-        abilities.push(add(dropLowest(fourDSix())))
+        abilities.push(add(dropLowest(dice(4, 6))))
     }
     console.log(abilities)
     return abilities
@@ -73,7 +38,7 @@ function standard () {
 function classic () {
     let abilities = []
     for (j = 0; j < 6; j++) {
-        abilities.push(add(threeDSix()))
+        abilities.push(add(dice(3, 6)))
     }
     console.log(abilities)
     return(abilities)
