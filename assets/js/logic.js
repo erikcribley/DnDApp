@@ -81,4 +81,4 @@ disadvantage = () => {
   }
 }
 
-console.log(rerollOnes(dice(4, 6)))
+console.log(standard(),classic(),op())
