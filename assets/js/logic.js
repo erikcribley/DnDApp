@@ -81,4 +81,6 @@ disadvantage = () => {
   }
 }
 
-console.log(standard(),classic(),op())
+modifier = (n) => {
+  return Math.floor((n - 10) / 2)
+}
